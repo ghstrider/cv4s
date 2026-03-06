@@ -1,7 +1,7 @@
 // https://typelevel.org/sbt-typelevel/faq.html#what-is-a-base-version-anyway
 ThisBuild / tlBaseVersion := "0.0" // your current series x.y
 
-ThisBuild / organization := "io.github.anthropics"
+ThisBuild / organization := "io.github.ghstrider"
 ThisBuild / organizationName := "cv4s contributors"
 ThisBuild / startYear := Some(2026)
 ThisBuild / licenses := Seq(License.Apache2)

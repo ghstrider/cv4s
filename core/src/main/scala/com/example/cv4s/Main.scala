@@ -19,8 +19,15 @@ package cv4s
 import io.circe.*
 import io.circe.generic.semiauto.*
 
+case class Meta(
+    canonical: Option[String] = None,
+    version: Option[String] = None,
+    lastModified: Option[String] = None
+)
+
 /** JSON Resume schema - https://jsonresume.org/schema */
 case class Resume(
+    `$schema`: Option[String] = None,
     basics: Option[Basics] = None,
     work: Option[List[Work]] = None,
     volunteer: Option[List[Volunteer]] = None,
@@ -32,7 +39,8 @@ case class Resume(
     languages: Option[List[Language]] = None,
     interests: Option[List[Interest]] = None,
     references: Option[List[Reference]] = None,
-    projects: Option[List[Project]] = None
+    projects: Option[List[Project]] = None,
+    meta: Option[Meta] = None
 )
 
 case class Basics(
@@ -63,6 +71,8 @@ case class Profile(
 
 case class Work(
     name: Option[String] = None,
+    location: Option[String] = None,
+    description: Option[String] = None,
     position: Option[String] = None,
     url: Option[String] = None,
     startDate: Option[String] = None,
@@ -149,6 +159,7 @@ case class Project(
 )
 
 object Resume:
+  given Codec[Meta] = deriveCodec
   given Codec[Location] = deriveCodec
   given Codec[Profile] = deriveCodec
   given Codec[Basics] = deriveCodec
