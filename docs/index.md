@@ -1,13 +1,15 @@
-## cv4s
+# cv4s
 
-### Usage
+A Scala 3 library for parsing and working with [JSON Resume](https://jsonresume.org/schema) files using [Circe](https://circe.github.io/circe/).
 
-This library is currently available for Scala binary versions 2.13 and 3.3+.
-
-To use the latest version, include the following in your `build.sbt`:
+## Installation
 
 ```scala
-libraryDependencies ++= Seq(
-  "com.example" %% "cv4s" % "@VERSION@"
-)
+libraryDependencies += "io.github.ghstrider" %%% "cv4s" % "@VERSION@"
+```
+
+Or with scala-cli:
+
+```
+//> using dep io.github.ghstrider::cv4s::@VERSION@
 ```
