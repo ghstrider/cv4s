@@ -38,7 +38,8 @@ lazy val docs = project
     tlSiteHelium ~= {
       import laika.helium.config._
       _.site.topNavigationBar(
-        homeLink = IconLink.internal(laika.ast.Path.Root / "index.md", HeliumIcon.home)
+        homeLink =
+          IconLink.internal(laika.ast.Path.Root / "index.md", HeliumIcon.home)
       )
     }
   )
