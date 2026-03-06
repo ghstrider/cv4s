@@ -16,8 +16,9 @@
 
 package cv4s
 
-import io.circe.parser.*
-import io.circe.syntax.*
+import io.circe.parser._
+import io.circe.syntax._
+
 import Resume.given
 
 class ResumeSuite extends munit.FunSuite:

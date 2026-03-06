@@ -16,8 +16,8 @@
 
 package cv4s
 
-import io.circe.*
-import io.circe.generic.semiauto.*
+import io.circe._
+import io.circe.generic.semiauto._
 
 case class Meta(
     canonical: Option[String] = None,

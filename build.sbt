@@ -30,4 +30,15 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
     )
   )
 
-lazy val docs = project.in(file("site")).enablePlugins(TypelevelSitePlugin)
+lazy val docs = project
+  .in(file("site"))
+  .enablePlugins(TypelevelSitePlugin)
+  .settings(
+    tlSiteApiUrl := None,
+    tlSiteHelium ~= {
+      import laika.helium.config._
+      _.site.topNavigationBar(
+        homeLink = IconLink.internal(laika.ast.Path.Root / "index.md", HeliumIcon.home)
+      )
+    }
+  )
