@@ -1,5 +1,5 @@
 //> using scala 3.3.7
-//> using dep io.github.ghstrider::cv4s::0.0-SNAPSHOT
+//> using dep io.github.ghstrider::cv4s::0.0.1
 
 import cv4s.*
 import io.circe.parser.*

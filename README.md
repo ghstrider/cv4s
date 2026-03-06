@@ -8,13 +8,13 @@ Cross-published for **JVM**, **Scala.js**, and **Scala Native**.
 
 ```scala
 // build.sbt
-libraryDependencies += "io.github.ghstrider" %%% "cv4s" % "<version>"
+libraryDependencies += "io.github.ghstrider" %%% "cv4s" % "0.0.1"
 ```
 
 Or with scala-cli:
 
 ```scala
-//> using dep io.github.ghstrider::cv4s::<version>
+//> using dep io.github.ghstrider::cv4s::0.0.1
 ```
 
 ## Quick Start
