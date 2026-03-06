@@ -36,7 +36,9 @@ class ResumeSuite extends munit.FunSuite:
           name = Some("Jane Smith"),
           email = Some("jane@example.com"),
           profiles = Some(
-            List(Profile(network = Some("GitHub"), username = Some("janesmith")))
+            List(
+              Profile(network = Some("GitHub"), username = Some("janesmith"))
+            )
           )
         )
       ),
@@ -140,22 +142,37 @@ class ResumeSuite extends munit.FunSuite:
     // basics
     assertEquals(resume.basics.flatMap(_.name), Some("Richard Hendriks"))
     assertEquals(resume.basics.flatMap(_.label), Some("Programmer"))
-    assertEquals(resume.basics.flatMap(_.location).flatMap(_.city), Some("San Francisco"))
+    assertEquals(
+      resume.basics.flatMap(_.location).flatMap(_.city),
+      Some("San Francisco")
+    )
     assertEquals(resume.basics.flatMap(_.profiles).map(_.size), Some(2))
 
     // work
     assertEquals(resume.work.map(_.size), Some(1))
-    assertEquals(resume.work.flatMap(_.headOption).flatMap(_.name), Some("Pied Piper"))
-    assertEquals(resume.work.flatMap(_.headOption).flatMap(_.location), Some("Palo Alto, CA"))
+    assertEquals(
+      resume.work.flatMap(_.headOption).flatMap(_.name),
+      Some("Pied Piper")
+    )
+    assertEquals(
+      resume.work.flatMap(_.headOption).flatMap(_.location),
+      Some("Palo Alto, CA")
+    )
 
     // education
-    assertEquals(resume.education.flatMap(_.headOption).flatMap(_.institution), Some("University of Oklahoma"))
+    assertEquals(
+      resume.education.flatMap(_.headOption).flatMap(_.institution),
+      Some("University of Oklahoma")
+    )
 
     // skills
     assertEquals(resume.skills.map(_.size), Some(2))
 
     // projects
-    assertEquals(resume.projects.flatMap(_.headOption).flatMap(_.`type`), Some("application"))
+    assertEquals(
+      resume.projects.flatMap(_.headOption).flatMap(_.`type`),
+      Some("application")
+    )
 
     // meta
     assertEquals(resume.meta.flatMap(_.version), Some("v1.0.0"))
