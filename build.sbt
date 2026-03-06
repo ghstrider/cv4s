@@ -11,6 +11,10 @@ ThisBuild / developers := List(
 
 // publish website from this branch
 ThisBuild / tlSitePublishBranch := Some("main")
+// Central Portal doesn't support snapshots, only publish on version tags
+ThisBuild / githubWorkflowPublishTargetBranches := Seq(
+  RefPredicate.StartsWith(Ref.Tag("v"))
+)
 
 ThisBuild / crossScalaVersions := Seq("3.3.7")
 ThisBuild / scalaVersion := "3.3.7"
